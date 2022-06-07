@@ -11,7 +11,10 @@ detector = htm.handDetector()
 
 while True:
     success, img = cap.read()
-    img = detector.findHands(img)
+    # setting draw to true will allow you to see points along the hand
+    img = detector.findHands(img, draw=True)
+
+    #setting draw to true makes points larger or what is set within the handtrackingmodule
     lmList = detector.findPosition(img, draw=False)
     if len(lmList) != 0:
         print(lmList[4])
