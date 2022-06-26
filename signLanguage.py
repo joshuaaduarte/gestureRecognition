@@ -21,7 +21,7 @@ while True:
     lmList = detector.findPosition(img, draw=False)
     if len(lmList) != 0:
         # used if user is making an 'A'
-        if (lmList[tipIDs[0]][1] > lmList[baseJointIDs[0]][1]) and (lmList[tipIDs[1]][2] > lmList[baseJointIDs[1]][2]) and (lmList[tipIDs[2]][2] > lmList[baseJointIDs[2]][2]) and (lmList[tipIDs[3]][2] > lmList[baseJointIDs[3]][2]) and (lmList[tipIDs[4]][2] > lmList[baseJointIDs[4]][2]):
+        if (lmList[tipIDs[0]][1] > lmList[baseJointIDs[0]][1]) and (lmList[tipIDs[1]][2] > lmList[baseJointIDs[1]][2]) and (lmList[tipIDs[2]][2] > lmList[baseJointIDs[2]][2]) and (lmList[tipIDs[3]][2] > lmList[baseJointIDs[3]][2]) and (lmList[tipIDs[4]][2] > lmList[baseJointIDs[4]][2]) and (lmList[tipIDs[1]][1] < lmList[midFingerIDs[0]][1]):
             cv2.putText(img, str('A'), (30, 70), cv2.FONT_HERSHEY_SIMPLEX, 3, (255, 0, 255), 3)
 
         # used if user makes an 'B'
@@ -45,7 +45,32 @@ while True:
             cv2.putText(img, str('F'), (30, 70), cv2.FONT_HERSHEY_SIMPLEX, 3, (255, 0, 255), 3)
 
         # used if user makes a 'G'
-        elif (lmList[tipIDs[0]][1] > lmList[baseJointIDs[0]][1]):
+        elif (lmList[tipIDs[0]][1] > lmList[baseJointIDs[0]][1]) and (lmList[tipIDs[0]][1] > lmList[midFingerIDs[0]][1]) and (lmList[tipIDs[1]][1] > lmList[upperMidIds[1]][1]) and (lmList[tipIDs[1]][1] > lmList[midFingerIDs[1]][1]) and (lmList[tipIDs[1]][1] > lmList[baseJointIDs[1]][1]) and (lmList[tipIDs[2]][2] > lmList[midFingerIDs[2]][2]) and (lmList[tipIDs[3]][2] > lmList[midFingerIDs[3]][2]) and (lmList[tipIDs[4]][2] > lmList[midFingerIDs[4]][2]) and (lmList[tipIDs[0]][1] > lmList[upperMidIds[1]][1]) and (lmList[tipIDs[1]][1] > lmList[midFingerIDs[0]][1]):
+            cv2.putText(img, str('G'), (30, 70), cv2.FONT_HERSHEY_SIMPLEX, 3, (255, 0, 255), 3)
+
+        # used if user makes an 'H'
+        elif (lmList[tipIDs[1]][1] > lmList[upperMidIds[1]][1]) and (lmList[tipIDs[1]][1] > lmList[midFingerIDs[1]][1]) and (lmList[tipIDs[1]][1] > lmList[baseJointIDs[1]][1]) and (lmList[tipIDs[2]][1] > lmList[upperMidIds[2]][1]) and (lmList[tipIDs[2]][1] > lmList[midFingerIDs[2]][1]) and (lmList[tipIDs[2]][1] > lmList[baseJointIDs[2]][1]) and (lmList[tipIDs[1]][2] < lmList[tipIDs[2]][2]) and (lmList[upperMidIds[1]][2] < lmList[upperMidIds[2]][2]) and (lmList[baseJointIDs[1]][2] < lmList[baseJointIDs[2]][2]) and (lmList[tipIDs[0]][2] > lmList[tipIDs[1]][2]) and (lmList[tipIDs[1]][1] > lmList[upperMidIds[2]][1]):
+            cv2.putText(img, str('H'), (30, 70), cv2.FONT_HERSHEY_SIMPLEX, 3, (255, 0, 255), 3)
+
+        # used if user makes an 'i'
+        elif (lmList[tipIDs[0]][1] > lmList[baseJointIDs[0]][1]) and (lmList[tipIDs[1]][2] > lmList[baseJointIDs[1]][2]) and (lmList[tipIDs[2]][2] > lmList[baseJointIDs[2]][2]) and (lmList[tipIDs[3]][2] > lmList[baseJointIDs[3]][2]) and (lmList[tipIDs[4]][2] < lmList[baseJointIDs[4]][2]) and (lmList[tipIDs[4]][2] < lmList[upperMidIds[4]][2]) and (lmList[tipIDs[4]][2] < lmList[midFingerIDs[4]][2]) and (lmList[tipIDs[1]][1] < lmList[midFingerIDs[0]][1]):
+            cv2.putText(img, str('I'), (30, 70), cv2.FONT_HERSHEY_SIMPLEX, 3, (255, 0, 255), 3)
+
+        # used if user makes a 'J'
+        # currently unable to due to movement.
+
+        # used if user makes a 'K'
+        elif (lmList[tipIDs[1]][2] < lmList[upperMidIds[1]][2]) and (lmList[tipIDs[1]][2] < lmList[midFingerIDs[1]][2]) and (lmList[tipIDs[1]][2] < lmList[baseJointIDs[1]][2]) and (lmList[tipIDs[2]][2] < lmList[midFingerIDs[2]][2]) and (lmList[tipIDs[2]][2] < lmList[baseJointIDs[2]][2]) and (lmList[tipIDs[1]][1] < lmList[upperMidIds[2]][1]) and  (lmList[tipIDs[3]][2] > lmList[baseJointIDs[3]][2]) and (lmList[tipIDs[4]][2] > lmList[baseJointIDs[4]][2]):
+            cv2.putText(img, str('K'), (30, 70), cv2.FONT_HERSHEY_SIMPLEX, 3, (255, 0, 255), 3)
+
+
+
+        # used if user makes an 'L'
+        elif (lmList[tipIDs[0]][1] > lmList[midFingerIDs[0]][1]) and (lmList[tipIDs[0]][1] > lmList[baseJointIDs[0]][1]) and (lmList[tipIDs[0]][2] > lmList[midFingerIDs[2]][2]) and (lmList[tipIDs[1]][2] < lmList[upperMidIds[1]][2]) and (lmList[tipIDs[1]][2] < lmList[midFingerIDs[1]][2]) and (lmList[tipIDs[1]][2] < lmList[baseJointIDs[1]][2]) and (lmList[tipIDs[2]][2] > lmList[baseJointIDs[2]][2]) and (lmList[tipIDs[3]][2] > lmList[baseJointIDs[3]][2]) and (lmList[tipIDs[4]][2] > lmList[baseJointIDs[4]][2]):
+            cv2.putText(img, str('L'), (30, 70), cv2.FONT_HERSHEY_SIMPLEX, 3, (255, 0, 255), 3)
+
+        
+
 
     cTime = time.time()
     fps = 1 / (cTime - pTime)
